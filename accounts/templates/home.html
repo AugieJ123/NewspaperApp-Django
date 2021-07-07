@@ -3,16 +3,12 @@
 {% block title %} Home {% endblock title %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-        {% if user.age == None %}
-            Hi {{ user.username }}! You need to enter your age.
-        {% else %}
-            Hi {{ user.username }}! You are {{ user.age }} years old.
-        {% endif %}
-        <p><a href=" {% url 'logout' %} ">Log Out</a></p>
-    {% else %}
-        <p>You are not logged in. Please clicked one of the links below to log in or sign up.</p>
-        <a href=" {% url 'login' %} ">Log In</a>
-        <a href=" {% url 'signup' %} " >Sign Up</a>
-    {% endif %}
+    <br/>
+    <div class="jumbotron">
+        <h1 class="display-4">Newspaper app</h1>
+        <p class="lead">A Newspaper website built with Django.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">View All Articles</a>
+        </p>
+    </div>
 {% endblock content %}
